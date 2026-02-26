@@ -44,9 +44,6 @@ Each record represents one individual patient with medical and lifestyle attribu
 
 🌐 Live Access
 
-🚀 Web Application:
-https://heart-disease-analysis-dashboard-2.onrender.com/
-
 📊 Tableau Dashboard:
        https://public.tableau.com/app/profile/meghana.ghasti/viz/HeartDiseaseAnalysis_17715198327280/Story1
 
