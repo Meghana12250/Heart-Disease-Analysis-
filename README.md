@@ -129,9 +129,14 @@ This project demonstrates practical skills in:
 - 
 
 💻 MEGHANA GASTHI
+
+
 Data Analyst | SQL • Python • Power BI | Turning Raw Data into Actionable Insights
 B.Tech – Electronics Communication & Engineering 
 Focused on data analysis, visualization, and building practical, insight-driven solutions.
+
+
+
 📬 Contact
 📧 gasthimeghana15@gmail.com
 🔗 LinkedIn: https://www.linkedin.com/in/meghana-gasthi/
