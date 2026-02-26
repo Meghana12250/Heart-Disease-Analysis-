@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heart Disease Analysis</title>
+
+<style>
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f6fb;
+}
+
+body {
+    opacity: 0;
+    animation: pageLoad 1s ease forwards;
+}
+
+@keyframes pageLoad {
+    to {
+        opacity: 1;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+/* When scrolled */
+header.scrolled {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e8f;
+}
+
+.menu-icon:hover {
+    transform: rotate(90deg);
+    transition: 0.3s;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #2c3e8f;
+}
+
+nav a.active {
+    color: #2c3e8f;
+    border-bottom: 2px solid #2c3e8f;
+}
+
+.btn {
+    background: #2c3e8f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #1f2c6b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+    background: linear-gradient(to right, #eef1ff, #ffffff);
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    color: #1e2a78;
+    margin-bottom: 20px;
+}
+
+.hero-text button {
+    background: #4a5cff;
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hero-text {
+    animation: slideIn 1s ease forwards;
+    opacity: 0;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hero img {
+    width: 450px;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about {
+    padding: 100px 80px;
+}
+
+.about-container {
+    display: flex;               /* IMPORTANT */
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-text {
+    width: 50%;
+    background: #eef1f7;
+    padding: 50px;
+    border-radius: 12px;
+    line-height: 1.8;
+    font-size: 15px;
+    color: #444;
+}
+
+.about-image {
+    width: 50%;
+}
+
+.about-image img {
+    width: 100%;
+    height: 450px;        /* Increase if needed */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* =========================
+   DASHBOARD SECTION
+========================= */
+.dashboard {
+    padding: 80px;
+}
+
+.dashboard h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1e2a78;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.dashboard-box {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    background: white;
+    padding: 20px;
+    
+}
+
+.dashboard-box {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+
+/* =========================
+   STORY SECTION
+========================= */
+.story {
+    padding: 80px;
+}
+
+.story h2 {
+    text-align: left;
+    margin-bottom: 40px;
+    color: #1e2a78;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.story-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.story-box iframe {
+    width: 100%;
+    height: 850px;
+    border: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #1e2a78;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">
+        <span class="menu-icon">&#9776;</span>
+        Welcome
+    </div>
+   <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#story">Story</a>
+    <a href="#about" class="btn">Get Started</a>
+</nav>
+</header>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h1>Heart Disease Analysis</h1>
+        <a href="#about" class="btn">Get Started →</a>
+    </div>
+    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966487.png" alt="Heart Image">
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about">
+    <div class="about-container">
+
+        <div class="about-text">
+            <p>
+                Heart disease (heart disease) is a group of diseases related to
+                cardiovascular diseases, manifested by a violation of the normal
+                functioning of the heart. May be caused by damage to the
+                epicardium, pericardium, myocardium, endocardium, valvular
+                apparatus of the heart, heart vessels.
+
+                <br><br>
+
+                According to the National Heart, Lung and Blood Institute in
+                Framingham (USA), the most important factors in the development
+                of cardiovascular disease in humans are obesity, sedentary
+                lifestyle and smoking.
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img src="https://cdn.apollohospitals.com/dev-apollohospitals/2023/09/largest_cardiac_coe.jpg" alt="Cardiac Care">
+        </div>
+
+    </div>
+</section>
+
+<!-- DASHBOARD SECTION -->
+<section id="dashboard" class="dashboard">
+    <h2>Dashboard</h2>
+
+    <div class="dashboard-box">
+
+        <iframe 
+            src="https://public.tableau.com/views/HeartDiseaseAnalysis_17715198327280/Dashboard1?:showVizHome=no&:embed=true"
+            width="100%" 
+            height="650"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+</section>
+
+<!-- STORY SECTION -->
+<section id="story" class="story">
+    <h2>Heart Disease Story</h2>
+
+    <div class="story-box">
+
+        <!-- Tableau Embedded Story -->
+        <iframe 
+            src="https://public.tableau.com/views/HeartDiseaseAnalysis_17715198327280/Story1?:embed=y&:display_count=yes&:showVizHome=no"
+            width="100px" 
+            height="850"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+</section>
+<style>
+.story-box iframe {
+    width: 100%;
+    min-height: 600px;
+    border-radius: 10px;
+}
+</style>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Heart Disease Analysis Project
+</footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (pageYOffset >= sectionTop - 100) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    window.dispatchEvent(new Event("scroll"));
+  }, 500);
+});
+
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        document.querySelectorAll(".dashboard-box").forEach(function(el){
+            el.style.opacity = "1";
+        });
+    }, 1200); // wait for Tableau to render
+});
+
+</script>
+
+</body>
+</html>
