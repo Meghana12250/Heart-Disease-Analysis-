@@ -48,10 +48,10 @@ Each record represents one individual patient with medical and lifestyle attribu
 https://heart-disease-analysis-dashboard-2.onrender.com/
 
 📊 Tableau Dashboard:
-https://public.tableau.com/app/profile/meghana.ghasti/viz/HeartDiseaseAnalysis_17715198327280/Story1
+       https://public.tableau.com/app/profile/meghana.ghasti/viz/HeartDiseaseAnalysis_17715198327280/Story1
 
 📍 Tableau Story:
-https://public.tableau.com/views/HEARTDISEASEANALYSISDASHBOARD/Story1
+       https://public.tableau.com/app/profile/meghana.ghasti/viz/HeartDiseaseAnalysis_17715198327280/Story1
 
 📊 Step 4: Analysis Questions
 
@@ -128,7 +128,14 @@ This project demonstrates practical skills in:
 - Dashboard design
 - Healthcare data visualization
 - Tableau reporting
+- 
 
-
----
+💻 MEGHANA GASTHI
+Data Analyst | SQL • Python • Power BI | Turning Raw Data into Actionable Insights
+B.Tech – Electronics Communication & Engineering 
+Focused on data analysis, visualization, and building practical, insight-driven solutions.
+📬 Contact
+📧 gasthimeghana15@gmail.com
+🔗 LinkedIn: https://www.linkedin.com/in/meghana-gasthi/
+💻 GitHub: https://github.com/Meghana12250
 
